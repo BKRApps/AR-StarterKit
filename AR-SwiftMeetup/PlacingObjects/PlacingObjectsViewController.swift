@@ -48,18 +48,14 @@ class PlacingObjectsViewController: UIViewController {
     @objc func handleTap(tapGesture:UITapGestureRecognizer){
         let tappedPoint = tapGesture.location(in: sceneView)
         print("tapped on the location \(tappedPoint)")
-
         let node = SCNNode.getRandomNode()
         //placing the node
         let cameraTransform = sceneView.session.currentFrame?.camera.transform
         var translation = matrix_identity_float4x4
         translation.columns.3.z = -0.3
-
         let finalTransform = simd_mul(cameraTransform!, translation)
         node.transform = SCNMatrix4(finalTransform)
-
         sceneView.scene.rootNode.addChildNode(node)
-
     }
 
 }

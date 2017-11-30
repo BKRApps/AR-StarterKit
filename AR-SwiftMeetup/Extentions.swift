@@ -39,10 +39,23 @@ extension SCNNode {
     }
 }
 
+extension matrix_float4x4 {
+    func printMatrix()  {
+        print(" Matrix ")
+        print("[ \(columns.0.x)  \(columns.1.x)  \(columns.2.x) \(columns.3.x) ]")
+        print("[ \(columns.0.y)  \(columns.1.y)  \(columns.2.y) \(columns.3.y) ]")
+        print("[ \(columns.0.z)  \(columns.1.z)  \(columns.2.z) \(columns.3.z) ]")
+        print("[ \(columns.0.w) \(columns.1.w) \(columns.2.w) \(columns.3.w) ] \n\n")
+    }
+}
+
 
 extension UIColor {
     static func randomColor() -> UIColor {
         return UIColor(hue: CGFloat(drand48()), saturation: 1, brightness: 1, alpha: 1)
     }
 }
+
+
+
 
