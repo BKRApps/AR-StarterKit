@@ -17,6 +17,7 @@
 		2D006AA81FD002A000F5F41F /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D006AA71FD002A000F5F41F /* Extentions.swift */; };
 		2D006AAA1FD00CC700F5F41F /* PlaneDetection2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D006AA91FD00CC700F5F41F /* PlaneDetection2ViewController.swift */; };
 		2D006AB11FD015A700F5F41F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D006AB01FD015A700F5F41F /* art.scnassets */; };
+		2DF671F11FD07EAE0035D5F9 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DF671F01FD07EAE0035D5F9 /* Models.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2D006AA71FD002A000F5F41F /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		2D006AA91FD00CC700F5F41F /* PlaneDetection2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneDetection2ViewController.swift; sourceTree = "<group>"; };
 		2D006AB01FD015A700F5F41F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		2DF671F01FD07EAE0035D5F9 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				2D006A911FCFD09500F5F41F /* LaunchScreen.storyboard */,
 				2D006A8C1FCFD09500F5F41F /* Main.storyboard */,
 				2D006A8F1FCFD09500F5F41F /* Assets.xcassets */,
+				2DF671F01FD07EAE0035D5F9 /* Models.scnassets */,
 				2D006AB01FD015A700F5F41F /* art.scnassets */,
 				2D006A941FCFD09500F5F41F /* Info.plist */,
 			);
@@ -165,6 +168,7 @@
 				2D006A931FCFD09500F5F41F /* LaunchScreen.storyboard in Resources */,
 				2D006AB11FD015A700F5F41F /* art.scnassets in Resources */,
 				2D006A901FCFD09500F5F41F /* Assets.xcassets in Resources */,
+				2DF671F11FD07EAE0035D5F9 /* Models.scnassets in Resources */,
 				2D006A8E1FCFD09500F5F41F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

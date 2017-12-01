@@ -47,13 +47,27 @@ class PlaneDetection2ViewController: UIViewController {
         let hitResults = sceneView.hitTest(point, types: ARHitTestResult.ResultType.existingPlaneUsingExtent)
         if hitResults.count > 0 {
             let hitResult = hitResults.first
-            let scene = SCNScene(named: "art.scnassets/ship.scn")
-            let childNode = scene?.rootNode.childNode(withName: "shipMesh", recursively: true)
+            //let scene = SCNScene(named: "art.scnassets/ship.scn")
+           // let childNode = scene?.rootNode.childNode(withName: "shipMesh", recursively: true)
+            let childNode = getVirtualModel(modelName: "candle")
             if let transform = hitResult?.worldTransform,let cNode = childNode {
                 cNode.position = SCNVector3Make(transform.columns.3.x, transform.columns.3.y, transform.columns.3.z)
                 sceneView.scene.rootNode.addChildNode(cNode)
             }
         }
+    }
+
+    func getVirtualModel(modelName:String,fileExtension:String="scn") -> SCNNode? {
+        guard let virtualObjectScene = SCNScene(named: "\(modelName).\(fileExtension)", inDirectory: "Models.scnassets/\(modelName)") else {
+            return nil
+        }
+        let wrapperNode = SCNNode()
+        for childNode in virtualObjectScene.rootNode.childNodes {
+            childNode.geometry?.firstMaterial?.lightingModel = .physicallyBased
+            childNode.movabilityHint = .movable
+            wrapperNode.addChildNode(childNode)
+        }
+        return wrapperNode
     }
 }
 
@@ -69,6 +83,7 @@ extension PlaneDetection2ViewController : ARSCNViewDelegate {
         if let planeAnchor = anchor as? ARPlaneAnchor {
             let geometry = SCNBox(width: CGFloat(planeAnchor.extent.x), height: 0.005, length: CGFloat(planeAnchor.extent.z), chamferRadius: 0.0)
             geometry.firstMaterial?.diffuse.contents = UIColor.init(red: 0, green: 0, blue: 1, alpha: 0.5)
+//            geometry.firstMaterial?.diffuse.contents = UIImage(named: "plane_grid")
             let planeNode = SCNNode(geometry: geometry)
             planeNode.position = SCNVector3(x: planeAnchor.center.x, y: -0.005, z: planeAnchor.center.z)
             existingPlanes[planeAnchor.identifier.uuidString] = planeNode
