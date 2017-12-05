@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SceneKit
 
 class ViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
         items.append(item2)
         let item3 = Item(name: "Plane Detection", description: "In this example we will detect the horizontal planes like tea tables, floors, etc. Once it detects , we will place 3D models on the detected plane.", type: .PlaneDectionAnd3DModels)
         items.append(item3)
+        
+
     }
 }
 
@@ -36,6 +39,7 @@ extension ViewController : UITableViewDataSource {
         let item = items[indexPath.row]
         cell.name.text = item.name
         cell.desc.text = item.description
+
         return cell
     }
 }

@@ -55,6 +55,8 @@ class PlacingObjectsViewController: UIViewController {
         translation.columns.3.z = -0.3
         let finalTransform = simd_mul(cameraTransform!, translation)
         node.transform = SCNMatrix4(finalTransform)
+
+
         sceneView.scene.rootNode.addChildNode(node)
     }
 
